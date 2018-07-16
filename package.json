@@ -1,0 +1,27 @@
+{
+  "name": "gnome-usbguard",
+  "version": "1.0.0",
+  "description": "GNOME shell extension to interact with USBGuard",
+  "main": "extension.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsclarke/gnome-usbguard.git"
+  },
+  "keywords": [
+    "usbguard",
+    "gnome"
+  ],
+  "author": "Richard Clarke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsclarke/gnome-usbguard/issues"
+  },
+  "homepage": "https://github.com/rsclarke/gnome-usbguard#readme",
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-plugin-gjs": "^1.0.4"
+  }
+}

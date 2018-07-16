@@ -1,0 +1,9 @@
+{
+    "name": "USBGuard",
+    "description": "Notification and USB device control with USBGuard.",
+    "url": "https://github.com/rsclarke/gnome-usbguard",
+    "uuid": "USBGuard@rsclarke",
+    "shell-version": [
+        "3.28.2"
+    ]
+}
