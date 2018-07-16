@@ -2,14 +2,17 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const USBGuard = Me.imports.usbguard;
 const util = Me.imports.util;
+const USBGuardButton = Me.imports.ui.USBGuardButton;
 
 const Gio = imports.gi.Gio;
+const Main = imports.ui.main;
 
 class GNOMEUSBGuard {
     
     constructor() {
         this.devices = {};
         this.usbguard = null;
+        this.ui = new USBGuardButton();
     }
 
     connect() {
@@ -54,6 +57,8 @@ function init() {
 
 function enable() {
     gnome_usbguard = new GNOMEUSBGuard();
+    util.log("Adding UI to status area");
+    Main.panel.addToStatusArea("GNOMEUSBGuard", gnome_usbguard.ui);
     try{
         gnome_usbguard.connect();
     } catch(err){
@@ -65,6 +70,8 @@ function enable() {
 }
 
 function disable() {
+    util.log("Disabling");
+    gnome_usbguard.ui.destroy();
     gnome_usbguard = null;
     //gnome_usbguard.disable();
 }
